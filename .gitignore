@@ -1,0 +1,33 @@
+## --- Результаты сборки (скомпилированный код) ---
+[Db]in/
+[Oo]bj/
+[Log]s/
+
+## --- Настройки Visual Studio ---
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+## --- Настройки VS Code ---
+.vscode/
+# Если работаешь в команде, настройки дебага можно оставить, 
+# но личные настройки лучше скрыть:
+.vscode/settings.json
+.vscode/tasks.json
+
+## --- Настройки JetBrains Rider ---
+.idea/
+*.sln.iml
+
+## --- Пакеты и зависимости (NuGet) ---
+project.lock.json
+project.fragment.lock.json
+artifacts/
+**/packages/
+# Новые форматы .NET восстанавливают пакеты автоматически, скачивать их в Git не нужно
+
+## --- Файлы операционной системы ---
+.DS_Store
+Thumbs.db
