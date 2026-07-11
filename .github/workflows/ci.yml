@@ -1,0 +1,32 @@
+name: .NET Core CI
+
+on:
+  push:
+    branches:
+      - main
+      - task07
+      - task08
+  pull_request:
+    branches:
+      - main
+      - task07
+      - task08
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '10.0.x'
+
+    - name: Run Task 08 Tests
+      run: |
+        dotnet restore practice2026/task08.slnx
+        dotnet build practice2026/task08.slnx --no-restore --configuration Release
+        dotnet test practice2026/task08.slnx --no-restore --configuration Release --verbosity normal
