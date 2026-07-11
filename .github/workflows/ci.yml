@@ -1,3 +1,15 @@
+name: .NET Core CI
+
+on:
+  push:
+    branches:
+      - main
+      - task07
+  pull_request:
+    branches:
+      - main
+      - task07
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
