@@ -29,7 +29,7 @@ jobs:
 
     - name: Run Active Task Tests
       run: |
-        if [ "${{ github.ref_name }}" = "task10" ]; then
+        if [ -f practice2026/task10.slnx ]; then
           dotnet restore practice2026/task10.slnx
           dotnet build practice2026/task10.slnx --no-restore --configuration Release
           dotnet test practice2026/task10.slnx --no-restore --configuration Release --verbosity normal
