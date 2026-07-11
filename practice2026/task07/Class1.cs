@@ -66,7 +66,8 @@ namespace task07
                 {
                     Console.WriteLine($"  - {prop.Name}: {propDisplay.DisplayName}");
                 }
-          
+            }
+
             Console.WriteLine("Методы:");
             var methods = type.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static);
             foreach (var method in methods)

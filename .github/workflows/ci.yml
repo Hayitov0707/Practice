@@ -1,11 +1,3 @@
-name: .NET Core CI
-
-on:
-  push:
-    branches: [ main, task07 ]
-  pull_request:
-    branches: [ main, task07 ]
-
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -20,10 +12,10 @@ jobs:
         dotnet-version: '10.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore practice2025.slnx
+      run: dotnet restore practice2026/practice2025.slnx
 
     - name: Build project
-      run: dotnet build practice2025.slnx --no-restore --configuration Release
+      run: dotnet build practice2026/practice2025.slnx --no-restore --configuration Release
 
     - name: Run xUnit Tests
-      run: dotnet test practice2025.slnx --no-restore --configuration Release --verbosity normal
+      run: dotnet test practice2026/practice2025.slnx --no-restore --configuration Release --verbosity normal
