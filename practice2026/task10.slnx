@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="PluginContract/PluginContract.csproj" />
+  <Project Path="SamplePlugins/SamplePlugins.csproj" />
+  <Project Path="PluginRunner/PluginRunner.csproj" />
+  <Project Path="task10tests/task10tests.csproj" />
+</Solution>
