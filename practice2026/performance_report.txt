@@ -1,0 +1,5 @@
+Chosen Step Size: 0.1
+Average Single-Threaded Execution Time: 0.03 ms
+Optimal Number of Threads: 2
+Average Optimal Multi-Threaded Execution Time: 0.34 ms
+Performance Difference: -960.43%
