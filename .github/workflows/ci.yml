@@ -1,0 +1,58 @@
+name: .NET Core CI
+
+on:
+  push:
+    branches:
+      - main
+      - task07
+      - task09
+      - task10
+      - task11
+      - task13
+      - task14
+  pull_request:
+    branches:
+      - main
+      - task07
+      - task09
+      - task10
+      - task11
+      - task13
+      - task14
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '10.0.x'
+
+    - name: Run Active Task Tests
+      run: |
+        if [ -f practice2026/task14.slnx ]; then
+          dotnet restore practice2026/task14.slnx
+          dotnet build practice2026/task14.slnx --no-restore --configuration Release
+          dotnet test practice2026/task14.slnx --no-restore --configuration Release --verbosity normal
+        elif [ -f practice2026/task13.slnx ]; then
+          dotnet restore practice2026/task13.slnx
+          dotnet build practice2026/task13.slnx --no-restore --configuration Release
+          dotnet test practice2026/task13.slnx --no-restore --configuration Release --verbosity normal
+        elif [ -f practice2026/task11.slnx ]; then
+          dotnet restore practice2026/task11.slnx
+          dotnet build practice2026/task11.slnx --no-restore --configuration Release
+          dotnet test practice2026/task11.slnx --no-restore --configuration Release --verbosity normal
+        elif [ -f practice2026/task10.slnx ]; then
+          dotnet restore practice2026/task10.slnx
+          dotnet build practice2026/task10.slnx --no-restore --configuration Release
+          dotnet test practice2026/task10.slnx --no-restore --configuration Release --verbosity normal
+        else
+          dotnet restore practice2026/practice2025.slnx
+          dotnet build practice2026/practice2025.slnx --no-restore --configuration Release
+          dotnet test practice2026/practice2025.slnx --no-restore --configuration Release --verbosity normal
+        fi
