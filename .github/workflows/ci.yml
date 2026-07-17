@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+      - task01
+      - task02
+      - task03
+      - task04
+      - task05
       - task07
       - task09
       - task10
@@ -17,6 +22,11 @@ on:
   pull_request:
     branches:
       - main
+      - task01
+      - task02
+      - task03
+      - task04
+      - task05
       - task07
       - task09
       - task10
@@ -55,6 +65,38 @@ jobs:
           dotnet restore practice2026/task17.slnx
           dotnet build practice2026/task17.slnx --no-restore --configuration Release
           dotnet test practice2026/task17.slnx --no-restore --configuration Release --verbosity normal
+        elif [ -f practice2026/task15.slnx ]; then
+          dotnet restore practice2026/task15.slnx
+          dotnet build practice2026/task15.slnx --no-restore --configuration Release
+          dotnet test practice2026/task15.slnx --no-restore --configuration Release --verbosity normal
+        elif [ -f practice2026/task14.slnx ]; then
+          dotnet restore practice2026/task14.slnx
+          dotnet build practice2026/task14.slnx --no-restore --configuration Release
+          dotnet test practice2026/task14.slnx --no-restore --configuration Release --verbosity normal
+        elif [ -f practice2026/task13.slnx ]; then
+          dotnet restore practice2026/task13.slnx
+          dotnet build practice2026/task13.slnx --no-restore --configuration Release
+          dotnet test practice2026/task13.slnx --no-restore --configuration Release --verbosity normal
+        elif [ -f practice2026/task05.slnx ]; then
+          dotnet restore practice2026/task05.slnx
+          dotnet build practice2026/task05.slnx --no-restore --configuration Release
+          dotnet test practice2026/task05.slnx --no-restore --configuration Release --verbosity normal
+        elif [ -f practice2026/task04.slnx ]; then
+          dotnet restore practice2026/task04.slnx
+          dotnet build practice2026/task04.slnx --no-restore --configuration Release
+          dotnet test practice2026/task04.slnx --no-restore --configuration Release --verbosity normal
+        elif [ -f practice2026/task03.slnx ]; then
+          dotnet restore practice2026/task03.slnx
+          dotnet build practice2026/task03.slnx --no-restore --configuration Release
+          dotnet test practice2026/task03.slnx --no-restore --configuration Release --verbosity normal
+        elif [ -f practice2026/task02.slnx ]; then
+          dotnet restore practice2026/task02.slnx
+          dotnet build practice2026/task02.slnx --no-restore --configuration Release
+          dotnet test practice2026/task02.slnx --no-restore --configuration Release --verbosity normal
+        elif [ -f practice2026/task01.slnx ]; then
+          dotnet restore practice2026/task01.slnx
+          dotnet build practice2026/task01.slnx --no-restore --configuration Release
+          dotnet test practice2026/task01.slnx --no-restore --configuration Release --verbosity normal
         else
           dotnet restore practice2026/practice2025.slnx
           dotnet build practice2026/practice2025.slnx --no-restore --configuration Release
